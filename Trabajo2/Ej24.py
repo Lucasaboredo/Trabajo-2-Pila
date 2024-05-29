@@ -23,7 +23,7 @@ class Pila:
     def tamano(self):
         return len(self.items)
 
-# Función para encontrar la posición de Rocket Raccoon y Groot
+
 def encontrar_posicion_personajes(pila, personajes_buscar):
     posicion = 1
     posiciones = {}
@@ -36,13 +36,13 @@ def encontrar_posicion_personajes(pila, personajes_buscar):
         pila_aux.apilar(personaje)
         posicion += 1
 
-    # Volvemos a poner los elementos en la pila original
+   
     while not pila_aux.esta_vacia():
         pila.apilar(pila_aux.desapilar())
 
     return posiciones
 
-# Función para encontrar personajes con más de 5 películas
+
 def personajes_mas_de_5_peliculas(pila):
     personajes = []
     pila_aux = Pila()
@@ -59,7 +59,6 @@ def personajes_mas_de_5_peliculas(pila):
 
     return personajes
 
-# Función para encontrar cuántas películas participó Black Widow
 def peliculas_viuda_negra(pila):
     cantidad_peliculas = 0
     pila_aux = Pila()
@@ -76,7 +75,6 @@ def peliculas_viuda_negra(pila):
 
     return cantidad_peliculas
 
-# Función para mostrar personajes cuyos nombres empiezan con C, D y G
 def personajes_letra(pila, letras):
     personajes = []
     pila_aux = Pila()
@@ -87,13 +85,12 @@ def personajes_letra(pila, letras):
             personajes.append(personaje)
         pila_aux.apilar(personaje)
 
-    # Volvemos a poner los elementos en la pila original
     while not pila_aux.esta_vacia():
         pila.apilar(pila_aux.desapilar())
 
     return personajes
 
-# Creación y llenado de la pila de personajes
+# Creación 
 pila_personajes = Pila()
 personajes = [
     {'nombre': 'Iron Man', 'cantidad_peliculas': 10},
@@ -111,7 +108,6 @@ personajes = [
 for personaje in personajes:
     pila_personajes.apilar(personaje)
 
-# Resolvemos las actividades
 posiciones = encontrar_posicion_personajes(pila_personajes, ['Rocket Raccoon', 'Groot'])
 print("Posiciones de Rocket Raccoon y Groot:", posiciones)
 
